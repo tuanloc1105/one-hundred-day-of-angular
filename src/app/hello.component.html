@@ -1,0 +1,51 @@
+<h2>Hello there!</h2>
+<h3>Your name: {{ user.name }}</h3>
+<p>Your name: {{ user.age }}</p>
+
+<!-- <div *ngIf="user.age >= 13">Bạn có thể xem nội dung PG-13</div> -->
+<!-- <div *ngIf="user.age < 13">Bạn không có thể xem nội dung PG-13</div> -->
+
+<p>___________________________________</p>
+
+<ng-template #noPG13>
+  <div>Bạn không thể xem nội dung PG-13</div>
+</ng-template>
+<ng-template [ngIf]="user.age >= 13" [ngIfElse]="noPG13">
+  <div>Bạn có thể xem nội dung PG-13</div>
+</ng-template>
+
+<p>___________________________________</p>
+
+<div *ngFor="let author of authors">
+  STT: {{ author.id }}
+  Họ: {{ author.firstName }}
+  Tên: {{ author.lastName }}
+  Email: {{ author.email }}
+  Giới tính: {{ author.gender }}
+  Địa chỉ IP: {{ author.ipAddress }}
+</div>
+
+<ul>
+  <li *ngFor="let author of authors">{{ author.id }} - {{ author.firstName }} - {{ author.lastName }} - {{ author.email
+    }} - {{ author.gender }} - {{ author.ipAddress }}</li>
+</ul>
+
+<div *ngFor="let author of authors; index as idx; count as total">
+  ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
+  {{author.lastName}}
+</div>
+
+<p>___________________________________</p>
+
+<ng-template
+  ngFor
+  [ngForOf]="authors"
+  let-author
+  let-idx="index"
+  let-total="count"
+>
+  <div>
+    ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
+    {{author.lastName}}
+  </div>
+</ng-template>

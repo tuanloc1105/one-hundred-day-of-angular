@@ -1,0 +1,20 @@
+<app-hello></app-hello>
+
+<button (click)="toggleDanger()" >Toggle Danger</button>
+<br>
+<button (click)="toggleWarning()" >Toggle Warning</button>
+
+<!-- <div class="box" [class.red-border]="isDanger" [class.yellow-background]="isWarning" ></div> -->
+<div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}"></div>
+<div class="box" [class]="classes"></div>
+
+<!-- <p [style.color]="dangerColor" [style.background-color]="warningColor"> -->
+<p [style.color]="dangerColor">
+  A new journey has just been started
+</p>
+
+<!-- <app-progress-bar></app-progress-bar> -->
+<br>
+<app-progress-bar [backgroundColor]="'gray'" [progress]="currentProgress" [progressColor]="'green'"></app-progress-bar>
+<br>
+<button (click)="toggleCurrentProgess()">Click to increase progress value</button>
