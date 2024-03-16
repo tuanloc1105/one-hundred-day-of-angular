@@ -1,0 +1,9 @@
+<div>
+  <button class="select-button" (click)="select.emit(author)">
+    Select
+  </button>
+  <button class="select-button" (click)="delete.emit(author.id)">
+    Delete
+  </button>
+  - Full name: {{author.firstName}} {{author.lastName}}
+</div>

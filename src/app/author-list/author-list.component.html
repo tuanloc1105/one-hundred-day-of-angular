@@ -1,1 +1,6 @@
-<p>author-list works!</p>
+<p>Author List information: </p>
+<div>
+  Current selected author: {{currentAuthor?.firstName}} {{currentAuthor?.lastName}}
+</div>
+<br>
+<app-author-detail *ngFor="let author of authors" [author]="author" (select)="onSelected($event)" (delete)="onDeleted($event)"></app-author-detail>
