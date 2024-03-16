@@ -14,6 +14,8 @@ export class AppComponent {
 
   currentProgress = 88;
 
+  isCheck = true;
+
   dangerColor = 'black';
   warningColor = 'none';
 
