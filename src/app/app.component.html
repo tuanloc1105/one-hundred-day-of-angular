@@ -1,4 +1,8 @@
-<app-hello></app-hello>
+<app-hello [name]="title"></app-hello>
+<br>
+<input type="text" [(ngModel)]="title">
+<br>
+<br>
 
 <button (click)="toggleDanger()" >Toggle Danger</button>
 <br>
